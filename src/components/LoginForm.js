@@ -46,8 +46,19 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
               {error}
             </strong>}
             <div>
-              <button style={{ top: 10 }} className="btn waves-effect waves-light" type="submit" disabled={submitting}>Log In</button>
-              <button style={{ top: 10, left: 20 }} className="btn waves-effect waves-light" type="button" disabled={pristine || submitting} onClick={reset}>
+              <button
+                style={{ top: 10 }}
+                className="btn waves-effect waves-light"
+                type="submit"
+                disabled={submitting}>
+                Log In
+              </button>
+              <button
+                style={{ top: 10, left: 20 }}
+                className="btn waves-effect waves-light"
+                type="button"
+                disabled={pristine || submitting}
+                onClick={reset}>
                 Clear Values
           </button>
             </div>
