@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LoginForm from './components/LoginForm';
 import './styles/App.css';
 import { Route, Switch } from 'react-router-dom';

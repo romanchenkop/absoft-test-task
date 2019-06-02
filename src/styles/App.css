@@ -112,3 +112,12 @@
   50%{top:0em}
   100%{top:0em;}
 }
+
+.closure-btns-box {
+  margin: 300px;
+  padding-left: 350px;
+}
+
+.try-btn, .next-btn {
+  color: blue;
+}
