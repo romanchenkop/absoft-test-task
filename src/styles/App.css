@@ -48,10 +48,67 @@
   border: 1px solid whitesmoke;
   top: 30px;
   margin-bottom: -20px;
-  margin-top: -12px;
-  margin-left: -5px;
+  margin-top: -14px;
+  margin-left: -11px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  margin-right: -5px;
+  margin-right: -11px;
+  border-radius: 7px;
 }
 
+.closure-task-bg {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.closure-task-box {
+  font-size: 20px;
+  color: rgb(190, 112, 104);
+  margin-left: auto;
+  padding-top: 20px;
+  margin-right: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+.button1 {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid rgb(248, 157, 157);
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.30em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:rgba(248, 78, 120, 0.89);
+  text-align:center;
+  transition: all 0.2s;
+}
+.button1:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+ .button1{ 
+  display:block;
+  margin:0.4em auto;
+  }
+}
+
+.bouncy {
+  animation: bouncy 5s infinite linear;
+  position: relative;
+}
+
+@keyframes bouncy {
+  0%{top:0em}
+  40%{top:0em}
+  43%{top:-0.9em}
+  46%{top:0em}
+  48%{top:-0.4em}
+  50%{top:0em}
+  100%{top:0em;}
+}

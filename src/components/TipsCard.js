@@ -1,7 +1,8 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
+import '../styles/App.css'
 
-const Card = (props) => {
+const Card = () => {
   return (
     <div className="card">
       <div className="content">
