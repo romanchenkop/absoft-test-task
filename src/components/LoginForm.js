@@ -1,8 +1,10 @@
+/* eslint-disable react/no-typos */
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import TipsCard from './TipsCard';
 import '../styles/App.css';
 import { SubmissionError } from 'redux-form';
+import PropTypes from 'prop-types'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
@@ -11,9 +13,13 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   </div>
 );
 
+renderField.propTypes = {
+  input: PropTypes.object,
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+}
 
-const LoginForm = props => {
-  const { error, handleSubmit, pristine, reset, submitting, submitErrors } = props;
+const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }) => {
   return (
     <div>
       <img
@@ -40,7 +46,7 @@ const LoginForm = props => {
               {error}
             </strong>}
             <div>
-              <button onClick={() => console.log(submitErrors)} style={{ top: 10 }} className="btn waves-effect waves-light" type="submit" disabled={submitting}>Log In</button>
+              <button style={{ top: 10 }} className="btn waves-effect waves-light" type="submit" disabled={submitting}>Log In</button>
               <button style={{ top: 10, left: 20 }} className="btn waves-effect waves-light" type="button" disabled={pristine || submitting} onClick={reset}>
                 Clear Values
           </button>
@@ -75,9 +81,18 @@ const LoginForm = props => {
         _error: 'Login failed!',
       });
     } else {
-      props.history.push('/protected')
+      history.push('/protected')
     }
   };
+};
+
+LoginForm.propTypes = {
+  pristine: PropTypes.bool.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.any,
+  reset: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  history: PropTypes.object,
 };
 
 export default reduxForm({

@@ -13,7 +13,7 @@ const Card = () => {
   );
 }
 
-const TipsCard = (props) => (
+const TipsCard = () => (
   <div className="wrapper" >
     <Popup
       trigger={<button

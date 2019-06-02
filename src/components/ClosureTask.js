@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
+import PropTypes from 'prop-types';
 
 const ClosureTask = ({ history }) => {
   const [userArray, setUserArray] = useState([]);
@@ -66,5 +67,9 @@ const ClosureTask = ({ history }) => {
     </div>
   );
 }
+
+ClosureTask.propTypes = {
+  history: PropTypes.object
+};
 
 export default ClosureTask;
