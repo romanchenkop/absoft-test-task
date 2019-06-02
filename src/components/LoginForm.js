@@ -2,16 +2,17 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import submit from '../helpers/submit';
 import TipsCard from './TipsCard';
+import '../styles/App.css'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
     <input {...input} placeholder={label} type={type} />
-    {touched && error && <span>{error}</span>}
+    {touched && error && <span className="isa-error">{error}</span>}
   </div>
 );
 
 const LoginForm = props => {
-  const { error, handleSubmit, pristine, reset, submitting } = props;
+  const { error, handleSubmit, pristine, reset, submitSucceeded, history, submitting, valid } = props;
   return (
     <div className="container login-box">
       <div className="row">
@@ -33,11 +34,10 @@ const LoginForm = props => {
             {error}
           </strong>}
           <div>
-            <button className="sumbit-btn btn waves-effect waves-light" type="submit" disabled={submitting}>Log In</button>
-            <button style={{ left: 20 }} className="clear-btn btn waves-effect waves-light" type="button" disabled={pristine || submitting} onClick={reset}>
+            <button onClick={() => { valid && history.push('/protected') }} style={{ top: 10 }} className="btn waves-effect waves-light" type="submit" disabled={submitting}>Log In</button>
+            <button style={{ top: 10, left: 20 }} className="btn waves-effect waves-light" type="button" disabled={pristine || submitting} onClick={reset}>
               Clear Values
           </button>
-            {/* <a href="#" className="right btn-floating btn-large waves-effect waves-light red"><i class=" material-icons">add</i></a> */}
           </div>
         </form>
         <div className="tipcard">
@@ -49,5 +49,5 @@ const LoginForm = props => {
 };
 
 export default reduxForm({
-  form: 'LoginForm', // a unique identifier for this form
+  form: 'LoginForm',
 })(LoginForm);

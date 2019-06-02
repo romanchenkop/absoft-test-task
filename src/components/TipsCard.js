@@ -1,7 +1,7 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="card">
       <div className="content">
@@ -12,8 +12,8 @@ const Card = () => {
   );
 }
 
-const TipsCard = () => (
-  <div className="wrapper">
+const TipsCard = (props) => (
+  <div className="wrapper" >
     <Popup
       trigger={<button
         style={{ bottom: "35px" }}
@@ -25,7 +25,9 @@ const TipsCard = () => (
     >
       <Card />
     </Popup>
-  </div>
+  </div >
 )
+
+
 
 export default TipsCard;
