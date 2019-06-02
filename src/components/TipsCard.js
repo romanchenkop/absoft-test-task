@@ -1,13 +1,13 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import '../styles/App.css'
+import '../styles/App.css';
 
 const Card = () => {
   return (
     <div className="card">
       <div className="content">
-        Username: Pavel <br />
-        Password: ABsoft
+        Username: Pavel <br />,
+        Password: ABsoft,
       </div>
     </div >
   );
@@ -27,7 +27,7 @@ const TipsCard = (props) => (
       <Card />
     </Popup>
   </div >
-)
+);
 
 
 

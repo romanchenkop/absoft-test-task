@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import TipsCard from './TipsCard';
-import '../styles/App.css'
-import { SubmissionError } from 'redux-form'
+import '../styles/App.css';
+import { SubmissionError } from 'redux-form';
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
@@ -52,13 +52,14 @@ const LoginForm = props => {
         </div>
       </div >
     </div>
-  )
+  );
 
+  //takes values from sumbit event and validates it
   function submit(values) {
     if (!values.username) {
       throw new SubmissionError({
         username: "Username is required"
-      })
+      });
     } else if (values.username !== "Pavel") {
       throw new SubmissionError({
         username: 'User does not exist',
@@ -67,7 +68,7 @@ const LoginForm = props => {
     } else if (!values.password) {
       throw new SubmissionError({
         password: "Password Required"
-      })
+      });
     } else if (values.password !== 'ABsoft') {
       throw new SubmissionError({
         password: 'Wrong password',
@@ -76,9 +77,7 @@ const LoginForm = props => {
     } else {
       props.history.push('/protected')
     }
-  }
-
-
+  };
 };
 
 export default reduxForm({

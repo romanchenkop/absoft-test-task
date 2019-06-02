@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 
 const ClosureTask = ({ history }) => {
-
   const [userArray, setUserArray] = useState([]);
-
+  // function takes ann array and returns differnce between each item from the beginning step by step
   const getDifference = (array) => {
     if (array !== null) {
       const iterableArr = [...array];
@@ -21,11 +20,12 @@ const ClosureTask = ({ history }) => {
       alert("you must put an array");
     }
   }
-
+  // Invokes function to get array from user on component mount
   useEffect(() => {
     return getArrayFromPrompt();
   }, []);
 
+  //function which takes array from prompt, validates it and pushes it to state
   const getArrayFromPrompt = () => {
     const userInput = prompt("Put your array separated by whitespace");
     let validatedUserInput;
