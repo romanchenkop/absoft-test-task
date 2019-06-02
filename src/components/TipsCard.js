@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="content">
-        Username: PaveL <br />
+        Username: Pavel <br />
         Password: ABsoft
       </div>
     </div >

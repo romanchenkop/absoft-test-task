@@ -1,12 +1,13 @@
 import React from 'react'
+import { Route } from 'react-router-dom';
 
-export const ProtectedRoute = (props) => {
+let ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
-    <div>
-      <button onClick={() => {
-        console.log(props.history)
-      }}></button>
-      Hello
-    </div>
-  )
+    <Route {...rest} render={
+      (props) => {
+        return <Component {...props} />;
+      }} />
+  );
 }
+
+export default ProtectedRoute;
