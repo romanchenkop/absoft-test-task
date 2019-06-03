@@ -29,6 +29,4 @@ const TipsCard = () => (
   </div >
 );
 
-
-
 export default TipsCard;

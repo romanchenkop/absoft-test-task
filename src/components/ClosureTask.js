@@ -12,9 +12,9 @@ const ClosureTask = ({ history }) => {
       let idx = -1;
       return function () {
         if (idx === iterableArr.length - 2) {
-          idx = 0
+          idx = 0;
         } else {
-          idx++
+          idx++;
         }
         alert(`${iterableArr[idx + 1]} - ${iterableArr[idx]} = ${iterableArr[idx + 1] - iterableArr[idx]}`);
       }
@@ -22,6 +22,7 @@ const ClosureTask = ({ history }) => {
       alert("you must put an array");
     }
   }
+
   // Invokes function to get array from user on component mount
   useEffect(() => {
     return getArrayFromPrompt();

@@ -75,7 +75,7 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
   function submit(values) {
     if (!values.username) {
       throw new SubmissionError({
-        username: "Username is required"
+        username: "Username is required",
       });
     } else if (values.username !== "Pavel") {
       throw new SubmissionError({
@@ -84,7 +84,7 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
       });
     } else if (!values.password) {
       throw new SubmissionError({
-        password: "Password Required"
+        password: "Password Required",
       });
     } else if (values.password !== 'ABsoft') {
       throw new SubmissionError({
@@ -92,7 +92,7 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
         _error: 'Login failed!',
       });
     } else {
-      history.push('/protected')
+      history.push('/protected');
     }
   };
 };
