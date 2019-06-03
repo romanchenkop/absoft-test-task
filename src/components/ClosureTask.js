@@ -23,6 +23,10 @@ const ClosureTask = ({ history }) => {
     }
   }
 
+  const pushRoute = () => {
+    history.push('/')
+  }
+
   // Invokes function to get array from user on component mount
   useEffect(() => {
     return getArrayFromPrompt();
@@ -50,7 +54,7 @@ const ClosureTask = ({ history }) => {
       <div className="closure-task-box">
         <button
           className="button1"
-          onClick={() => history.push('/')}>
+          onClick={pushRoute}>
           Logout
         </button>
       </div>
