@@ -1,8 +1,17 @@
 {
   "name": "absoft-test-task",
   "version": "0.1.0",
+  "description": "Task test using redux-form/PropTypes/react-router",
+  "keywords": [
+    "react",
+    "redux-from",
+    "test-task",
+    "react-router"
+  ],
+  "author": "Romanchenko Pavel <romanchenkopv@gmail.com>",
   "private": true,
   "dependencies": {
+    "jest-enzyme": "^7.0.2",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -18,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

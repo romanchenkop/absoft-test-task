@@ -1,17 +1,7 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 import '../styles/App.css';
-
-const Card = () => {
-  return (
-    <div className="card">
-      <div className="content">
-        Username: Pavel <br />,
-        Password: ABsoft,
-      </div>
-    </div >
-  );
-}
+import Card from './Card';
 
 const TipsCard = () => (
   <div className="wrapper" >
