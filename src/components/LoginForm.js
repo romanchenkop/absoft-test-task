@@ -4,22 +4,36 @@ import { Field, reduxForm } from 'redux-form';
 import TipsCard from './TipsCard';
 import '../styles/App.css';
 import { SubmissionError } from 'redux-form';
-import PropTypes from 'prop-types'
-
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    <input {...input} placeholder={label} type={type} />
-    {touched && error && <span className="isa-error">{error}</span>}
-  </div>
-);
-
-renderField.propTypes = {
-  input: PropTypes.object,
-  label: PropTypes.string,
-  type: PropTypes.string.isRequired,
-}
+import PropTypes from 'prop-types';
+import RenderField from './RenderField';
 
 const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }) => {
+
+  //takes values from sumbit event and validates it
+  function submit(values) {
+    if (!values.username) {
+      throw new SubmissionError({
+        username: "Username is required",
+      });
+    } else if (values.username !== "Pavel") {
+      throw new SubmissionError({
+        username: 'User does not exist',
+        _error: 'Login failed!',
+      });
+    } else if (!values.password) {
+      throw new SubmissionError({
+        password: "Password Required",
+      });
+    } else if (values.password !== 'ABsoft') {
+      throw new SubmissionError({
+        password: 'Wrong password',
+        _error: 'Login failed!',
+      });
+    } else {
+      history.push('/protected');
+    }
+  };
+
   return (
     <div>
       <img
@@ -32,13 +46,13 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
             <Field
               name="username"
               type="text"
-              component={renderField}
+              component={RenderField}
               label="Username"
             />
             <Field
               name="password"
               type="password"
-              component={renderField}
+              component={RenderField}
               label="Password"
             />
             {error && <strong className="isa_error">
@@ -70,32 +84,7 @@ const LoginForm = ({ error, handleSubmit, pristine, reset, submitting, history }
       </div >
     </div>
   );
-
-  //takes values from sumbit event and validates it
-  function submit(values) {
-    if (!values.username) {
-      throw new SubmissionError({
-        username: "Username is required",
-      });
-    } else if (values.username !== "Pavel") {
-      throw new SubmissionError({
-        username: 'User does not exist',
-        _error: 'Login failed!',
-      });
-    } else if (!values.password) {
-      throw new SubmissionError({
-        password: "Password Required",
-      });
-    } else if (values.password !== 'ABsoft') {
-      throw new SubmissionError({
-        password: 'Wrong password',
-        _error: 'Login failed!',
-      });
-    } else {
-      history.push('/protected');
-    }
-  };
-};
+}
 
 LoginForm.propTypes = {
   pristine: PropTypes.bool.isRequired,

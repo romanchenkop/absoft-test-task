@@ -7,7 +7,7 @@ const ClosureTask = ({ history }) => {
   const [userArray, setUserArray] = useState([]);
   // function takes ann array and returns differnce between each item from the beginning step by step
   const getDifference = (array) => {
-    if (array !== null) {
+    if (array != null) {
       const iterableArr = [...array];
       let idx = -1;
       return function () {
